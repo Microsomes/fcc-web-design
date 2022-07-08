@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html>
+
+    <head>
+
+        <title> Survey Form </title>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="build_a_survey_form_project.css" />
+    </head>
+
+    <body>
+        <div class="container">
+          <header class="header">
+            <h1 id="title" class="text-center">Gameing Survey Form</h1>
+            <p id="description" class="description text-center">
+              Thank you for taking the time to help us improve the Gaming industry
+            </p>
+          </header>
+
+          <form id="survey-form">
+                <div class="form-group">
+                    <label id="name-label" for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required></input>
+                </div>
+                
+                <div class="form-group">
+                    <label id="email-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required></input>
+                </div>
+
+                <div class="form-group">
+                    <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+                    <input type="number" name="age" id="number" min="10" max="99" class="form-control" placeholder="Age"></input>
+                </div>
+
+                <div class="form-group">
+                <p>What is your favorite genre of games?</p>
+                <select id="dropdown" name="role" class="form-control" required>
+                    <option disabled selected value>Select current role</option>
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Fighting">Fighting</option>
+                    <option value="Platform">Platform</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Racing">Racing</option>
+                    <option value="Roleplaying">Role-playing</option>
+                    <option value="Shooter">Shooter</option>
+                    <option value="Simulation">Simulation</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Strategy">Strategy</option>
+                    <option value="other">other</option>
+                </select>
+                </div>
+    
+                <div class="form-group">
+                <p>do you game with friends?</p>
+                    <label>
+                    <input name="user-recommend" value="Yes" type="radio" class="input-radio" checked></input>Yes
+                    </label>
+                
+                    <label>
+                        <input name="user-recommend" value="Somtimes" type="radio" class="input-radio"></input>Somtimes
+                    </label>
+        
+                    <label>
+                    <input name="user-recommend" value="no" type="radio" class="input-radio"></input>No
+                    </label>
+                </div>
+    
+                <div class="form-group">
+                <p>What is your favorite part of gaming?</p>
+                <select id="most-like" name="mostLike" class="form-control" required>
+                    <option disabled selected value>Select an option</option>
+                    <option value="challenges">Challenges</option>
+                    <option value="friends">playing with friends?</option>
+                    <option value="community">Community</option>
+                    <option value="story">story</option>
+                </select>
+                </div>
+    
+                <div class="form-group">
+                    <p>
+                        What would you like to see improved in current games?
+                        <span class="clue">(Check all that apply)</span>
+                    </p>
+                    
+                    <label>
+                        <input name="prefer" value="graphics" type="checkbox" class="input-checkbox"></input>improved graphics
+                    </label>
+                    <label>
+                        <input name="prefer" value="content" type="checkbox" class="input-checkbox"></input>more content
+                    </label>
+                    <label>
+                        <input name="prefer" value="dificulties" type="checkbox" class="input-checkbox"></input>heigher dificulties
+                    </label>
+                    <label>
+                        <input name="prefer" value="rewards" type="checkbox" class="input-checkbox"></input>better/more rewards
+                    </label>
+                    <label>
+                        <input name="prefer" value="matchmaking" type="checkbox" class="input-checkbox"></input>improved matchmaking
+                    </label>
+                    <label>
+                        <input name="prefer" value="option" type="checkbox" class="input-checkbox"></input>more player based option
+                    </label>
+                </div>
+        
+                <div class="form-group">
+                    <p>Any comments or suggestions?</p>
+                    <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <button type="submit" id="submit" class="submit-button">Submit</button>
+                </div>
+          
+            </form>
+        </div>
+    </body>
+</html>

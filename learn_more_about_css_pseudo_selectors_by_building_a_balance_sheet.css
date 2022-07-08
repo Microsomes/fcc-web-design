@@ -1,0 +1,156 @@
+span[class~="sr-only"]{
+    border:0 !important;/*Rather than having to constantly double-check you are not overwriting your earlier properties, you can use the !important keyword to ensure these properties are always applied, regardless of order or specificity.*/
+    clip:rect(1px, 1px, 1px, 1px) !important;/*The CSS clip property is used to define the visible portions of an element.*/
+    clip-path:inset(50%) !important;/*The clip-path property determines the shape the clip property should take*/
+    -webkit-clip-path:inset(50%) !important;/*clip-path and -webkit-clip-path selectors to set the value to inset(50%), forming the clip-path into a rectangle within the element.*/
+    height:1px !important;
+    width:1px !important;
+    position:absolute !important;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+    padding:0 !important;
+    margin:-1px !important;/*This will ensure that not only are they no longer visible, but they are not even within the page view.*/
+}/*The span[class~="sr-only"] selector will select any span element whose class includes sr-only. Create that selector, and give it a border property set to 0.*/
+
+html{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:sans-serif;
+    color: #0a0a23;
+}
+
+h1{
+    max-width:37.25rem;
+    margin:0 auto;
+    padding:1.5rem 1.25rem;
+}
+
+h1 .flex{
+    display:flex;
+    flex-direction:column-reverse;
+    gap:1rem;
+}
+
+h1 .flex span:first-of-type{/*The :first-of-type pseudo-selector is used to target the first element that matches the selector*/
+    font-size:0.7em;
+}
+
+h1 .flex span:last-of-type{/*The :last-of-type pseudo-selector does the exact opposite - it targets the last element that matches the selector*/
+    font-size:1.2em;
+}
+
+section{
+    max-width:40rem;
+    margin:0 auto;
+    border:2px solid #d0d0d5;
+}
+
+#years{
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    background: #0a0a23;
+    color: #fff;
+    z-index: 999;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0; /*The calc() function is a CSS function that allows you to calculate a value based on other values. For example, you can use it to calculate the width of the viewport minus the margin of an element: .example { margin: 10px; width: calc(100% - 20px); }*/
+    margin: 0 -2px;
+}
+
+#years span[class]{/*The span[class] syntax will target any span element that has a class attribute set, regardless of the attribute's value.*/
+    font-weight:bold;
+    width:4.5rem;
+    text-align:right;
+}
+
+.table-wrap{
+    padding:0 0.75rem 1.5rem 0.75rem;
+}
+
+span:not(.sr-only){/*The :not() pseudo-selector is used to target all elements that do not match the selector - in this case, any of your span elements that do not have the span[class~="sr-only"] class. This ensures that your earlier rules for the sr-only class are not overwritten.*/
+    font-weight:normal;
+}
+
+table{
+    border-collapse:collapse;
+    border:0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+}
+
+table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+}
+
+tbody td{
+    width:100vw;/*vw stands viewport*/
+    min-width:4rem;
+    max-width:4rem;
+}
+
+tbody th{
+    width:calc(100% - 12rem);
+}
+
+tr[class="total"]{
+    border-bottom:4px double #0a0a23;
+    font-weight:bold;
+}
+
+tr[class="total"] th{
+    text-align:left;
+    padding:0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td{/*The key difference between tr[class="total"] and tr.total is that the first will select tr elements where the only class is total. The second will select tr elements where the class includes total.*/
+    text-align: right;
+    padding:0 0.25rem
+}
+
+tr.total td:nth-of-type(3){/*The :nth-of-type() pseudo-selector is used to target specific elements based on their order among siblings of the same type. */
+    padding-right:0.5rem;
+}
+
+tr.total:hover{/*:hover allows you to change the properties of elements when mouse hover over it */
+    background-color:#99c9ff;
+}
+
+td.current{
+    font-style:italic;
+}
+
+tr.data{
+    background-image:linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th{
+    text-align: left;
+    padding-top:0.3rem;
+    padding-left:0.5rem;
+}
+
+tr.data th .description{/*Create a tr.data th .description selector to target the elements with the class set to description that are within your th elements in your .data table rows. */
+    display:block;
+    font-weight:normal;
+    font-style: italic;
+    padding:1rem 0 0.75rem;
+    margin-right:-13.5rem;
+}
+
+tr.data td{
+    vertical-align:top;
+    padding:0.3rem 0.25rem 0;
+    text-align:right;
+}
+
+tr.data td:last-of-type{
+    padding-right:0.5rem;
+}
